@@ -414,6 +414,9 @@ body > section {
 .navegacion-principal a:hover {
   color: #F53756;
 }
+.navegacion-principal .icon-door {
+  color: aquamarine;
+}
 
 .login {
   min-height: 100vh;
