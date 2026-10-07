@@ -32,19 +32,33 @@ include "PAG/sigIn.php";
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexion DB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
 </head>
+
 <body>
-    <h1>Login</h1>
-    <form action="" method="POST">
-        <label for="dni-form">Documento Usuario</label>
-        <input type="number" name="dni-form">
-        <label for="pw-form">Contraseña</label>
-        <input type="password" name="pw-form">
-        <input type="submit" value="Enviar" name="validar-usuario">
-    </form>
+
+    <body class="login">
+        <div class="caja-login">
+            <h1>Login</h1>
+            <?php if (!empty($error_login)) { ?>
+                <p class="error-login"><?php echo $error_login; ?></p>
+            <?php } ?>
+            <form action="" method="POST">
+                <label for="dni-form">Documento</label>
+                <input type="number" name="dni-form" id="dni-form">
+                <label for="pw-form">Contraseña</label>
+                <input type="password" name="pw-form" id="pw-form">
+                <input type="submit" value="Ingresar" name="validar-usuario">
+            </form>
+        </div>
+    </body>
 </body>
+
 </html>

@@ -1,4 +1,5 @@
 <?php
+$error_login = '';
 
 if (isset($_POST['validar-usuario'])) {
     $userForm = $_POST['dni-form'];
@@ -21,6 +22,6 @@ if (isset($_POST['validar-usuario'])) {
         header('Location: PAG/dashboard.php');
         exit;
     } else {
-        echo "Usuario o contraseña incorrecto";
+        $error_login = "Usuario o contraseña incorrecto";
     }
 }

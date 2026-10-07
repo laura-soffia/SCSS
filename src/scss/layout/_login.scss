@@ -1,0 +1,84 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, v.$azul_oscuro, v.$azul);
+}
+
+.caja-login {
+    width: 100%;
+    max-width: 42rem;
+    padding: 4rem 3rem;
+    background-color: v.$blanco;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem rgba(v.$negro, 0.3);
+
+    @include m.tablet {
+        padding: 5rem 4rem;
+    }
+
+    h1 {
+        margin: 0 0 3rem;
+        text-align: center;
+        color: v.$azul_oscuro;
+    }
+
+    .error-login {
+        margin: 0 0 2rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+        color: #842029;
+        background-color: #f8d7da;
+        border: 1px solid #f5c2c7;
+        border-radius: 0.6rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    label {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: v.$azul_oscuro;
+    }
+
+    input[type="number"],
+    input[type="password"] {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.6rem;
+        border: 2px solid v.$azul_claro;
+        border-radius: 0.6rem;
+
+        &:focus {
+            outline: none;
+            border-color: v.$azul;
+            box-shadow: 0 0 0 0.3rem rgba(v.$azul, 0.25);
+        }
+    }
+
+    input[type="submit"] {
+        margin-top: 1rem;
+        padding: 1.3rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: v.$blanco;
+        background-color: v.$azul;
+        border: none;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: v.$azul_oscuro;
+        }
+    }
+}
